@@ -10,19 +10,22 @@ public class one {
         a = n.toCharArray();
         x = 'x';
         ex = 0;
-        int co = 0;
+
         for (char i : a) {
             if (i == '^') {
                 int tt = new String(a).indexOf('^');
-                int f = tt+1;
-                int exp = a[f];
+              for(int j =tt+1; j<a.length; j++){
+
+              }
+                int f =tt+1;
+                int exp = Integer.parseInt(Character.toString(a[f]));
                 System.out.println(exp);
                 int d = new String(a).indexOf("x");
                 int e = d-1;
-                int coe = a[e];
+                int coe = Integer.parseInt(Character.toString(a[e]));
                 System.out.println(coe);
-                int k = co*exp;
-                System.out.println(k);
+                int k = coe*exp;
+                System.out.println(k + "x^" + (exp-1) );
             }
 
         }
