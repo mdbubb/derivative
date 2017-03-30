@@ -8,16 +8,27 @@ public class one {
     public static char a[];
     public static int ex;
 
-    public static void solve(String n) {
+    public static void powerRule(String n) {
         a = n.toCharArray();
         x = 'x';
         ex = 0;
         for (char i : a) {
-            if (i == '^') {
+            if (n.contains("(") || n.contains(")")) {
+                String parenth = "";
+                parenth = n.substring((n.indexOf("(") + 1), n.indexOf(")"));
+                String pqwieoru = n.substring(0, n.indexOf("("));
+                powerRule(pqwieoru);
+                System.out.print("(" + parenth + ") + ");
+                powerRule(parenth);
+                System.out.println("(" + pqwieoru + ")");
+                break;
+
+
+            } else if (i == '^') {
                 int tt = new String(a).indexOf('^');
                 String sub = n;
                 String bub = "";
-                String hi ="";
+                String hi = "";
                 for (int j = tt + 1; j < a.length; j++) {
                     bub = sub.substring(tt + 1, sub.length());
                     if (sub.contains("+")) {
@@ -33,49 +44,58 @@ public class one {
                 int newExp = Integer.parseInt(bub) - 1;
                 //old coe
                 int d = new String(a).indexOf("x");
-                for(int u=0; u<a.length; u++){
-                    hi = sub.substring(0,d);
+                for (int u = 0; u < a.length; u++) {
+                    hi = sub.substring(0, d);
                 }
-               //new Coe
+                //new Coe
                 int k = Integer.parseInt(hi) * Integer.parseInt(bub);
                 //print
-                System.out.println(k + "x^" + newExp);
-            }
-            else if(!n.contains("\\d")){
+                System.out.print(k + "x^" + newExp);
+            } else if (!n.contains("\\d")) {
                 String cos = "cos x";
                 String sin = "sin x";
                 String tan = "tan x";
                 String csc = "csc x";
                 String sec = "sec x";
                 String cot = "cot x";
-                if(n.contains("sin")){
+                if (n.contains("sin")) {
                     System.out.println(cos);
-                }
-                else if (n.contains("cos")){
-                    System.out.println("-"+sin);
+                } else if (n.contains("cos")) {
+                    System.out.print("-" + sin);
                     break;
-                }
-                else if (n.contains("tan")){
-                    System.out.println(sec+ " ^2");
+                } else if (n.contains("tan")) {
+                    System.out.print(sec + " ^2");
                     break;
-                }
-                else if(n.contains(sec)){
-                    System.out.println(sec+" "+tan);
+                } else if (n.contains(sec)) {
+                    System.out.print(sec + " " + tan);
                     break;
-                }
-                else if (n.contains(csc)){
-                    System.out.println("- " +csc+" "+cot);
+                } else if (n.contains(csc)) {
+                    System.out.print("- " + csc + " " + cot);
                     break;
-                }
-                else if (n.contains(cot)){
-                    System.out.println("- " +csc+"^2");
+                } else if (n.contains(cot)) {
+                    System.out.print("- " + csc + "^2");
                     break;
+                }else if (n.contains("(") || n.contains(")")) {
+                    String parenth = "";
+                    parenth = n.substring((n.indexOf("(") + 1), n.indexOf(")"));
+                    String pqwieoru = n.substring(0, n.indexOf("("));
+                    powerRule(pqwieoru);
+                    System.out.print("(" + parenth + ") + ");
+                    powerRule(parenth);
+                    System.out.println("(" + pqwieoru + ")");
+                    break;
+
+
                 }
             }
 
+
         }
+
 
     }
 
-
 }
+
+
+
