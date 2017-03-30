@@ -15,13 +15,13 @@ public class one {
             if (i == '^') {
                 int tt = new String(a).indexOf('^');
                 int f = tt+1;
-                int hi = a[f];
-                System.out.println(hi);
+                int exp = a[f];
+                System.out.println(exp);
                 int d = new String(a).indexOf("x");
                 int e = d-1;
-                int g = a[e];
-                System.out.println(g);
-                int k = hi*g;
+                int coe = a[e];
+                System.out.println(coe);
+                int k = co*exp;
                 System.out.println(k);
             }
 
