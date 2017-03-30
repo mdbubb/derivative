@@ -11,10 +11,20 @@ public class one {
         x = 'x';
         ex = 0;
         int co = 0;
-       for(char i: a){
-           if(i=='^'){
-               System.out.println(new String (a).indexOf('^'));
-           }
+        for (char i : a) {
+            if (i == '^') {
+                int tt = new String(a).indexOf('^');
+                int f = tt+1;
+                int hi = a[f];
+                System.out.println(hi);
+                int d = new String(a).indexOf("x");
+                int e = d-1;
+                int g = a[e];
+                System.out.println(g);
+                int k = hi*g;
+                System.out.println(k);
+            }
+
         }
 
     }
