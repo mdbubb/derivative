@@ -16,11 +16,11 @@ public class one {
             if (n.contains("(") || n.contains(")")) {
                 String parenth = "";
                 parenth = n.substring((n.indexOf("(") + 1), n.indexOf(")"));
-                String pqwieoru = n.substring(0, n.indexOf("("));
-                powerRule(pqwieoru);
+                String product = n.substring(0, n.indexOf("("));
+                powerRule(product);
                 System.out.print("(" + parenth + ") + ");
                 powerRule(parenth);
-                System.out.println("(" + pqwieoru + ")");
+                System.out.println("(" + product + ")");
                 break;
 
 
@@ -39,14 +39,13 @@ public class one {
                 }
 
                 int f = tt + 1;
-                int exp = Integer.parseInt(Character.toString(a[f]));
                 //new exp
                 int newExp = Integer.parseInt(bub) - 1;
                 //old coe
                 int d = new String(a).indexOf("x");
-                for (int u = 0; u < a.length; u++) {
+              
                     hi = sub.substring(0, d);
-                }
+
                 //new Coe
                 int k = Integer.parseInt(hi) * Integer.parseInt(bub);
                 //print
@@ -78,11 +77,11 @@ public class one {
                 }else if (n.contains("(") || n.contains(")")) {
                     String parenth = "";
                     parenth = n.substring((n.indexOf("(") + 1), n.indexOf(")"));
-                    String pqwieoru = n.substring(0, n.indexOf("("));
-                    powerRule(pqwieoru);
+                    String product = n.substring(0, n.indexOf("("));
+                    powerRule(product);
                     System.out.print("(" + parenth + ") + ");
                     powerRule(parenth);
-                    System.out.println("(" + pqwieoru + ")");
+                    System.out.println("(" + product + ")");
                     break;
 
 
